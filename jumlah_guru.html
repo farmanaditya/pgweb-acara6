@@ -56,7 +56,7 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                <h5>Jumlah Penduduk</h5>
+                <h5>Jumlah Guru</h5>
             </div>
             <div class="card-body">
                 <div id="chart"></div>
@@ -98,29 +98,30 @@
 
     <script>
        var options = {
-          series: [450392, 79819, 40491, 378, 1329, 151],
+          series: [{
+          data: [816, 298, 569, 581, 1145]
+        }],
           chart: {
-          type: 'donut',
-          width: 500
+          type: 'bar',
+          height: 350
         },
-
-        labels: ['Islam', 'Protestan', 'Katolik', 'Hindu', 'Buddha', 'Lainnya'],
-        responsive: [{
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 200
-            },
-            legend: {
-              position: 'bottom'
-            }
+        plotOptions: {
+          bar: {
+            borderRadius: 4,
+            horizontal: true,
           }
-        }]
+        },
+        dataLabels: {
+          enabled: false
+        },
+        xaxis: {
+          categories: ['Laweyan', 'Serengan', 'Pasar Kliwon', 'Jebres', 'Banjarsari'
+          ],
+        }
         };
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
-      
 </script>
 
 </body>
